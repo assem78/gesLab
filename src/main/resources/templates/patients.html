@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Liste des patients</title>
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap-3.3.7-dist/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap-3.3.7-dist/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" href="../static/css/mystyle.css"
+	th:href="@{/css/mystyle.css}" />
+</head>
+<body>
+	<div class="container spacer">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>ID Patient</th>
+					<th>Liste des Dossiers médicaux</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="p:${pagePatients.content}">
+					<td th:text="${p.id_patient}"></td>
+					<td th:text="${p.listeDossierMedical}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div>
+	<ul class="nav nav-pills">
+	<li th:each="p:${pages}">
+		<a th:text="${p}" href=""></a>
+	</li>
+	</ul>
+	</div>
+</body>
+</html>

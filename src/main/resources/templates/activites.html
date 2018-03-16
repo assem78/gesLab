@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Liste des activites</title>
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap-3.3.7-dist/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap-3.3.7-dist/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css"
+	href="../static/css/mystyle.css"
+	th:href="@{/css/mystyle.css}" />	
+</head>
+<body>
+	<div class="container spacer">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>ID Activité</th>
+					<th>type d'activité</th>
+					<th>Description</th>
+					<th>Liste des logs</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="a:${activites}">
+					<td th:text="${a.id_activite}"></td>
+					<td th:text="${a.type}"></td>
+					<td th:text="${a.description}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
